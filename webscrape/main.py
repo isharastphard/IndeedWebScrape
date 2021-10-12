@@ -18,9 +18,9 @@ def find_jobs():
             except (AttributeError, KeyError):
                 continue
             with open(f'C:\\Users\\Ishar\\Desktop\\webscrape\\{index}.csv', 'w') as f:
-                f.write(f"Company Name: {company_name} \n")
-                f.write(f"Job Title: {job_title} \n")
-                f.write(f"Company Location: {location_data} \n")
+                f.write(f"Company Name: {company_name}, \n")
+                f.write(f"Job Title: {job_title}, \n")
+                f.write(f"Company Location: {location_data}, \n")
                 f.write(f"All Postings By {company_name}: https://www.indeed.com{related_jobs} \n")
             print(f'File saved: {index}')
 
