@@ -15,9 +15,9 @@ def find_jobs():
             location_data = job.find('div', class_ = 'companyLocation').text #where the company is located
             try:
                 related_jobs = job.find('span', class_ = 'mat').a['href']
-            except AttributeError:
-                print("That's okay, keep going!")
-            with open(f'C:\\Users\\Ishar\\Desktop\\webscrape\\{index}.txt', 'w') as f:
+            except (AttributeError, KeyError):
+                continue
+            with open(f'C:\\Users\\Ishar\\Desktop\\webscrape\\{index}.csv', 'w') as f:
                 f.write(f"Company Name: {company_name} \n")
                 f.write(f"Job Title: {job_title} \n")
                 f.write(f"Company Location: {location_data} \n")
